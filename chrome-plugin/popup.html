@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Getting Started Extension's Popup</title>
+        <style>
+            form {
+                font-family: "Tahoma", "Geneva", sans-serif;
+                color: #626292;
+                padding: 10px;
+                width: 600px;
+            }
+            
+            body {
+                min-width:357px;
+                overflow-x:hidden;
+            }
+
+            #textUrl {
+                width: 55%;
+            }
+
+            textarea {
+                width: 100%;
+                resize: vertical; 
+            }
+
+            input[type=text], textarea{
+                border: 1px solid #626292;
+                color: #626292;
+                -webkit-border-radius: 5px;
+                background: -webkit-gradient(linear, left top, left 0, from(#f8f8ff), color-stop(4%, #e8e8ee), to(#f8f8ff));  
+            }
+
+            input[type=submit] {
+                border: 1px solid #626292;
+                color: #202050;
+                -webkit-border-radius: 5px;
+                background: -webkit-gradient(linear, left top, left 0, from(#f8f8ff), color-stop(4%, #e8e8ee), to(#f8f8ff));  
+            }
+
+			input[type=submit][disabled="disabled"] {
+                background: #E0E0E0;
+			}
+            #textResult {
+                background: #E0E0E0;
+                readonly="readonly"
+            }
+            
+    </style>
+
+    <!-- JavaScript and HTML must be in separate files for security. -->
+    <script src="popup.js"></script>
+  </head>
+  <body>
+    <div id="content" >
+        <form>
+          Middleware url: <input id="textUrl" type="text" > | <input type="submit" value="GET"> | <input type="submit" value="POST"><br>
+          <hr>
+          Middleware POST/GET data:<br>
+          <textarea class="multiline" id="textPost"></textarea><br>
+          Middleware response:<br>
+          <textarea class="multiline" id="textResult" readonly="readonly" ></textarea><br>
+          <hr>
+		  <div style="width: 100%" align="right">
+			<input type="submit" value="Open Result in a new Tab" disabled="disabled">
+		  </div>
+        </form>
+    </div>  
+  </body>
+</html>
